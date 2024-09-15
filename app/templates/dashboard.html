@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ current_user.role }} Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{{ current_user.role }} Dashboard</h1>
+        <nav>
+            <a href="{{ url_for('main.manage_courses') }}">Manage Courses</a>
+            <a href="{{ url_for('main.gradebook') }}">Gradebook</a>
+            <a href="{{ url_for('main.logout') }}">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Welcome, {{ current_user.username }}!</h2>
+        <p>Navigate through the dashboard using the links above.</p>
+    </main>
+</body>
+</html>

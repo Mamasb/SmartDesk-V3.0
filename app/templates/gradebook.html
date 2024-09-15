@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradebook</title>
+</head>
+<body>
+    <h1>Gradebook</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.student_id.label }}<br>
+            {{ form.student_id() }}<br>
+            {% for error in form.student_id.errors %}
+                <span>{{ error }}</span><br>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.course_id.label }}<br>
+            {{ form.course_id() }}<br>
+            {% for error in form.course_id.errors %}
+                <span>{{ error }}</span><br>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.grade.label }}<br>
+            {{ form.grade() }}<br>
+            {% for error in form.grade.errors %}
+                <span>{{ error }}</span><br>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</body>
+</html>
